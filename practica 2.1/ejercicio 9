@@ -32,3 +32,4 @@ int main(){
 
   return 1;
 }
+// el bit setuid está activado cuando el uid es distinto del euid

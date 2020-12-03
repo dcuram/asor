@@ -1,0 +1,9 @@
+#include <unistd.h>
+#include <stdio.h>
+
+int main() {
+	printf("Maximo de enlaces: %li\n", pathconf(_PC_LINK_MAX));
+	printf("Maximo ruta: %li\n", pathconf(_PC_PATH_MAX));
+	printf("Maximo nombre: %li\n", pathconf(_PC_NAME_MAX));
+	return 0;
+}

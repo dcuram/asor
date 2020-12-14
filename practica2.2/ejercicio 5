@@ -11,7 +11,7 @@ int main(){
 
   int df = open(PATH, O_CREAT, 0645);
 
-  printf("Descriptor = %i\n", df);
+  printf("TUPAC = %i\n", df);
 
 
   return 1;

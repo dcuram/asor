@@ -12,7 +12,6 @@ int main(){
   int df = open(PATH, O_CREAT, 0645);
 
   printf("TUPAC = %i\n", df);
-
-
+  
   return 1;
 }

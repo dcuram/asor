@@ -1,0 +1,23 @@
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sched.h>
+#include <sys/resource.h>
+#include <sys/time.h>
+
+int main() {
+
+  printf("PID: %i\n", getpid());
+  printf("PPID: %i\n", getppid());
+  printf("GPID: %i\n", getpgid(getpid()));
+  printf("SPID: %i\n", getsid(getpid()));
+  struct rlimit limit;
+  if (getrlimit(RLIMIT_NOFILE, &limit) == -1) {
+    perror("error en el limit");
+    return -1;
+  }
+  printf("LIMIT: %li\n", limit.rlim_max);
+
+  return 0;
+}

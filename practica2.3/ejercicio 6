@@ -8,14 +8,15 @@
 
 
 void printAtributos(char *type){
-  printf("[%s]PID: %i\n", type,getpid());
-  printf("[%s]PPID: %i\n", type, getppid());
-  printf("[%s]PPID: %i\n", type, getsid(getpid()));
+  printf("PID: %i\n", getpid());
+  printf("PPID: %i\n", getppid());
+  printf("GPID: %i\n", getpgid(getpid()));
+  printf("SPID: %i\n", getsid(getpid()));
   struct rlimit limit;
   if (getrlimit(RLIMIT_NOFILE, &limit) == -1) {
-    perror("");
+    perror("error en el limit");
   }
-  printf("[%s]LIMIT: %li\n", type, limit.rlim_max);
+  printf("LIMIT: %li\n", limit.rlim_max);
 
 }
 
